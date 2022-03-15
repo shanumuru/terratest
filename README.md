@@ -1,3 +1,3 @@
 # terratest
-# this is vpc cretaion using terraform publisc egistry module
-# s3 for remote state staorage, dynamo db table for locking 
+# this is vpc creation using terraform public registry module
+# s3 for remote state storage, dynamo db table for locking 
