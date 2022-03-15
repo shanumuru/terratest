@@ -10,7 +10,7 @@ terraform {
     
   }
 
-  # Adding Backend as S3 for Remote State Storage push to new branch
+  # Adding Backend as S3 for Remote State Storage push to new branch, test pr
 backend "s3" { 
 
   bucket = "priyaterraform-on-aws-for-ec2"
