@@ -1,10 +1,10 @@
 ################################################################################
 # Create VPC Terraform Module
 ################################################################################
-
+# VPC Output Values
 module "priyavpc" {
   source  = "terraform-aws-modules/vpc/aws"
-  version = "3.12.0"
+  version = "3.13.0"
   # insert the 23 required variables here
 #vpc basic details
 
