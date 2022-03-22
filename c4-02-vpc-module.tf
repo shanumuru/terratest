@@ -1,4 +1,7 @@
+################################################################################
 # Create VPC Terraform Module
+################################################################################
+
 module "priyavpc" {
   source  = "terraform-aws-modules/vpc/aws"
   version = "3.12.0"
@@ -18,7 +21,7 @@ azs                 = var.vpc_availability_zones
   create_database_subnet_group = var.vpc_create_database_subnet_group
   create_database_subnet_route_table=var.vpc_create_database_subnet_route_table
 
-    #create_database_nat_gateway_route = true
+  #create_database_nat_gateway_route = true
   #create_database_internet_gateway_route = true
 
   enable_nat_gateway = var.vpc_enable_nat_gateway #for private subnet to access internet for outbound commn, one way
