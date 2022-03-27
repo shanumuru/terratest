@@ -13,6 +13,7 @@ terraform {
   }
 
   # Adding Backend as S3 for Remote State Storage testing pr again
+  /*
 backend "s3" { 
 
   bucket = "priyaterraform-on-aws-for-ec2"
@@ -22,7 +23,8 @@ backend "s3" {
 #dynamodb for state locking
   dynamodb_table = "dev-project1-vpc"
   
-}
+}*/
+    
 }
  
 ################################################################################
