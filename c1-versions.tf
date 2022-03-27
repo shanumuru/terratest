@@ -1,4 +1,6 @@
+################################################################################
 # Terraform Block
+################################################################################
 terraform {
   required_version = "~>1.1"
   required_providers {
@@ -10,7 +12,7 @@ terraform {
     
   }
 
-  # Adding Backend as S3 for Remote State Storage push to new branch, test pr1
+  # Adding Backend as S3 for Remote State Storage testing pr again
 backend "s3" { 
 
   bucket = "priyaterraform-on-aws-for-ec2"
@@ -21,13 +23,13 @@ backend "s3" {
   dynamodb_table = "dev-project1-vpc"
   
 }
-
-
 }
  
-
-
+################################################################################
 # Provider Block
+################################################################################
+
+
 provider "aws" {
   region = var.aws_region
   #profile = default
