@@ -15,11 +15,42 @@ pipeline {
             }
         }
         
-        stage ("terraform destroy ") {
+       /* stage ("terraform destroy ") {
             steps {
           
                 sh ('terraform destroy --auto-approve') 
            }
-        }
+        }*/
+
+         stage ("wait for user input:apply or destroy")
+        {
+            steps{
+                    script {
+            // Define Variable
+             def USER_INPUT = input(
+                    message: 'User input required - apply or destroy action',
+                    parameters: [
+                            [$class: 'ChoiceParameterDefinition',
+                             choices: ['apply','destroy'].join('\n'),
+                             name: 'input',
+                             description: 'Menu - select action']
+                    ])
+
+            echo "The answer is: ${USER_INPUT}"
+
+                         if( "${USER_INPUT}" == "apply"){
+                             sh ('terraform apply --auto-approve') 
+                          }
+                           else if("${USER_INPUT}" == "destroy") {
+                                   sh ('terraform destroy --auto-approve') 
+                                   }
+                         else {
+                               echo "wrong input"
+                          } //if loop ends
+                
+                    }
+            } //steps end
+        } //stage ends    
+
     }
 }
